@@ -8,6 +8,8 @@
  */
 import bloodborneArt from "@/assets/art/bloodborne.jpg";
 import blackFlagArt from "@/assets/art/black-flag-resynced.jpg";
+import battlefield6Art from "@/assets/art/battlefield-6.jpg";
+import alanWake2Art from "@/assets/art/alan-wake-2.jpg";
 import valorantArt from "@/assets/art/valorant.jpg";
 
 export type CategoryId = "action" | "open-world" | "fps" | "story" | "racing" | "misc";
@@ -110,7 +112,7 @@ const seed: Seed[] = [
   { title: "Call of Duty: MW2 Campaign Remastered", category: "fps", status: "played", steam: 10180, year: 2020, studio: "Beenox", description: "Cliffhanger, Wolverines, the Gulag. The 2009 campaign, rebuilt." },
   { title: "Call of Duty: Black Ops 6", category: "fps", status: "played", steam: 2933620, year: 2024, studio: "Treyarch / Raven", description: "Omnimovement and a 1991 conspiracy thriller. Black Ops at its most agile." },
   { title: "Call of Duty: Ghosts", category: "fps", status: "played", steam: 209160, year: 2013, studio: "Infinity Ward", description: "The Federation, Riley the dog, and a campaign that went to space." },
-  { title: "Battlefield 6", category: "fps", status: "played", steam: 2807960, year: 2025, studio: "Battlefield Studios", description: "All-out warfare returns with destruction, squads, and 64-player chaos." },
+  { title: "Battlefield 6", category: "fps", status: "played", art: battlefield6Art, steam: 2807960, year: 2025, studio: "Battlefield Studios", description: "All-out warfare returns with destruction, squads, and 64-player chaos." },
   { title: "VALORANT", category: "fps", status: "played", art: valorantArt, year: 2020, studio: "Riot Games", description: "Five-versus-five tactical precision. Agents, spike sites, and clutch rounds." },
   { title: "Overwatch 2", category: "fps", status: "played", steam: 2357570, year: 2022, studio: "Blizzard Entertainment", description: "Hero shooter in 5v5 form. Push maps, new heroes, endless team fights." },
   { title: "Marvel Rivals", category: "fps", status: "played", steam: 2767030, year: 2024, studio: "NetEase Games", description: "Marvel heroes, destructible maps, and team-up abilities in 6v6." },
@@ -127,6 +129,7 @@ const seed: Seed[] = [
   { title: "Life is Strange: True Colors", category: "story", status: "played", steam: 936790, year: 2021, studio: "Deck Nine", description: "Alex Chen reads emotions in the small town of Haven Springs." },
   { title: "Uncharted: Legacy of Thieves Collection", category: "story", status: "played", steam: 1659420, year: 2022, studio: "Naughty Dog", description: "Nathan Drake's final treasure and Chloe's Lost Legacy, together." },
   { title: "Alan Wake Remastered", category: "story", status: "played", steam: 108710, year: 2021, studio: "Remedy Entertainment", description: "Bright Falls, the Dark Presence, and a writer fighting with a flashlight." },
+  { title: "Alan Wake 2", category: "story", status: "backlog", art: alanWake2Art, year: 2023, studio: "Remedy Entertainment", description: "Saga Anderson and Alan Wake, two dark stories mirroring each other. Remedy's horror masterpiece — next on the pile." },
   { title: "Hellblade: Senua's Sacrifice (Enhanced)", category: "story", status: "played", steam: 414340, year: 2017, studio: "Ninja Theory", description: "A journey into Helheim, and into psychosis. Play with headphones." },
   { title: "Senua's Saga: Hellblade II", category: "story", status: "played", steam: 2461850, year: 2024, studio: "Ninja Theory", description: "Iceland, giants, and one of the most photoreal games ever shipped." },
   { title: "Silent Hill f", category: "story", status: "backlog", steam: 2947440, year: 2025, studio: "NeoBards / Konami", description: "1960s Japan, blooming rot, and a new kind of fog." },
@@ -154,7 +157,7 @@ const seed: Seed[] = [
   { title: "Hi-Fi RUSH", category: "misc", status: "played", steam: 1817230, year: 2023, studio: "Tango Gameworks", description: "Rhythm-action where the whole world moves to the beat. Pure joy." },
   { title: "Amenti", category: "misc", status: "played", steam: 3292260, description: "An indie oddity from the queue, now played and filed away." },
   { title: "TORMENTOR", category: "misc", status: "played", steam: 1493440, year: 2025, studio: "Madmind Studio", description: "Madmind Studio's grim horror, from the team behind Agony." },
-  { title: "Nymphomaniac", category: "misc", status: "played", adult: true, description: "An adult title in the library. Shown only when 18+ content is enabled." },
+  { title: "Nymphomaniac", category: "misc", status: "played", adult: true, steam: 3002570, description: "An adult title in the library. Shown only when 18+ content is enabled." },
   { title: "Returning to Mia", category: "misc", status: "backlog", adult: true, steam: 2193070, year: 2023, studio: "Inceton Games", description: "An adult title waiting in the backlog. Shown only when 18+ content is enabled." },
 ];
 
@@ -232,7 +235,6 @@ export interface ArtSource {
  * the logo-free library hero art (more cinematic, more editorial).
  */
 export function artSource(game: Game, kind: ArtKind, width = 600): ArtSource | null {
-  if (game.adult) return null;
   if (game.art) return { src: game.art, fallbacks: [], cors: true };
   if (!game.steam) return null;
   const base = `${STEAM_CDN}/${game.steam}`;
