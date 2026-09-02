@@ -10,6 +10,9 @@ import bloodborneArt from "@/assets/art/bloodborne.jpg";
 import blackFlagArt from "@/assets/art/black-flag-resynced.jpg";
 import battlefield6Art from "@/assets/art/battlefield-6.jpg";
 import alanWake2Art from "@/assets/art/alan-wake-2.jpg";
+import rocketLeagueArt from "@/assets/art/rocket-league.jpg";
+import genshinArt from "@/assets/art/genshin-impact.jpg";
+import fortniteArt from "@/assets/art/fortnite.jpg";
 import valorantArt from "@/assets/art/valorant.jpg";
 
 export type CategoryId = "action" | "open-world" | "fps" | "story" | "racing" | "misc";
@@ -86,6 +89,7 @@ const seed: Seed[] = [
   { title: "Remnant II", category: "action", status: "played", steam: 1282100, year: 2023, studio: "Gunfire Games", description: "Souls-like structure with a shooter's feel. Procedural worlds built for co-op." },
   { title: "Ghostrunner 2", category: "action", status: "played", steam: 2144740, year: 2023, studio: "One More Level", description: "One hit kills, in both directions. First-person katana parkour at full speed." },
   { title: "Beast of Reincarnation", category: "action", status: "played", steam: 2001760, year: 2026, studio: "Game Freak", description: "Game Freak steps out of Pokémon: a sprawling action RPG in a cursed, far-future Japan." },
+  { title: "Wuthering Waves", category: "action", status: "played", steam: 3513350, year: 2024, studio: "Kuro Games", description: "Kuro Games' post-apocalyptic action RPG. Fluid parries, echoes, and an open world in ruins." },
 
   // OPEN WORLD / ADVENTURE
   { title: "Ghost of Tsushima: Director's Cut", category: "open-world", status: "played", steam: 2215430, year: 2021, studio: "Sucker Punch", featured: true, description: "Jin Sakai's samurai epic, plus Iki Island. The wind shows the way." },
@@ -104,6 +108,7 @@ const seed: Seed[] = [
   { title: "Marvel's Spider-Man 2", category: "open-world", status: "played", steam: 2651280, year: 2023, studio: "Insomniac Games", description: "Two Spider-Men, the symbiote, and Kraven's hunt across a bigger New York." },
   { title: "Assassin's Creed Black Flag Resynced", category: "open-world", status: "backlog", art: blackFlagArt, steam: 3751950, year: 2026, studio: "Ubisoft", description: "Edward Kenway's pirate saga, rebuilt for modern hardware. The Jackdaw sails again." },
   { title: "Assassin's Creed Shadows", category: "open-world", status: "backlog", steam: 3159330, year: 2025, studio: "Ubisoft", description: "Feudal Japan at last. Naoe and Yasuke, stealth and strength in a living world." },
+  { title: "Genshin Impact", category: "open-world", status: "played", art: genshinArt, year: 2020, studio: "HoYoverse", description: "Teyvat's open-world phenomenon. Seven elements, party swapping, and endless exploration." },
 
   // SHOOTERS / FPS
   { title: "Call of Duty: Modern Warfare (2019)", category: "fps", status: "played", steam: 2000950, year: 2019, studio: "Infinity Ward", description: "The reboot that reset the series. Clean House. Enough said." },
@@ -121,6 +126,7 @@ const seed: Seed[] = [
   { title: "METAL EDEN", category: "fps", status: "played", steam: 990380, year: 2025, studio: "Reikon Games", description: "Fast sci-fi shooting from the makers of Ruiner. Core-ripping momentum." },
   { title: "Call of Duty: Vanguard", category: "fps", status: "played", steam: 1985820, year: 2021, studio: "Sledgehammer Games", description: "Sledgehammer's WWII return. A multinational special forces team against the Fourth Reich's remnants." },
   { title: "Halo: Campaign Evolved", category: "fps", status: "played", steam: 2806050, year: 2026, studio: "Halo Studios", description: "The original Halo: CE campaign, rebuilt and expanded. New chapters, co-op, and the Ring as you remember it." },
+  { title: "Halo Infinite", category: "fps", status: "played", steam: 1240440, year: 2021, studio: "343 Industries", description: "Master Chief crash-lands on Zeta Halo. The classic sandbox, opened up." },
 
   // NARRATIVE / STORY-DRIVEN
   { title: "Clair Obscur: Expedition 33", category: "story", status: "played", steam: 1903340, year: 2025, studio: "Sandfall Interactive", featured: true, description: "Reactive turn-based combat in a painted world. Tomorrow comes." },
@@ -145,6 +151,7 @@ const seed: Seed[] = [
   { title: "Burnout Paradise Remastered", category: "racing", status: "played", steam: 1238080, year: 2018, studio: "Criterion Games", description: "Paradise City at 60fps. Takedowns, stunts, and that soundtrack." },
   { title: "MotoGP 23", category: "racing", status: "played", steam: 2100160, year: 2023, studio: "Milestone", description: "The full MotoGP season with dynamic weather and a deep career mode." },
   { title: "FIFA 23", category: "racing", status: "played", steam: 1811260, year: 2022, studio: "EA Vancouver", description: "The last FIFA. HyperMotion2 and the World Cup, one final time." },
+  { title: "Rocket League", category: "racing", status: "played", art: rocketLeagueArt, year: 2015, studio: "Psyonix", description: "Soccer, but with rocket cars. Psyonix's physics-driven juggernaut that never stopped growing." },
 
   // ACTION-ADVENTURE / MISC
   { title: "Prince of Persia: The Forgotten Sands", category: "misc", status: "played", steam: 33320, year: 2010, studio: "Ubisoft Montreal", description: "Time powers and wall runs, set between Sands of Time and Warrior Within." },
@@ -159,6 +166,7 @@ const seed: Seed[] = [
   { title: "TORMENTOR", category: "misc", status: "played", steam: 1493440, year: 2025, studio: "Madmind Studio", description: "Madmind Studio's grim horror, from the team behind Agony." },
   { title: "Nymphomaniac", category: "misc", status: "played", adult: true, steam: 3002570, description: "An adult title in the library. Shown only when 18+ content is enabled." },
   { title: "Returning to Mia", category: "misc", status: "backlog", adult: true, steam: 2193070, year: 2023, studio: "Inceton Games", description: "An adult title waiting in the backlog. Shown only when 18+ content is enabled." },
+  { title: "Fortnite", category: "misc", status: "played", art: fortniteArt, year: 2017, studio: "Epic Games", description: "The battle royale that swallowed pop culture. Build, loot, and survive the storm." },
 ];
 
 export const GAMES: Game[] = seed.map((g) => ({
